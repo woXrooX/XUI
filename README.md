@@ -1,2 +1,2 @@
 # XUI
-X UI
+CSS library
