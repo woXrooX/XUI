@@ -82,4 +82,26 @@ li{
   display: none;
 }
 /*** Removing default scrollbars END ***/
+
+/*** Body START ***/
+body{
+  background-color: var(--color-surface-1);
+  color: var(--color-text-primary);
+  font-size: 1rem;
+  height: var(--document-Height);
+}
+/*** Body END ***/
+
+/*** Mobile START ***/
+@media only screen and (max-width: 600px){
+  :root{
+    font-size: 16px;
+  }
+
+  html, body{
+    height: 100dvh;
+    overflow: hidden;
+  }
+}
+/*** Mobile END ***/
 /**************************** Defaults END ****************************/
