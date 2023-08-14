@@ -1,5 +1,30 @@
 /**************************** ROOT START ****************************/
-/**************************** ROOT END
+:root{
+  font-size: 22px;
+
+  --document-Height: 100dvh;
+
+  --padding: 5px;
+  --margin: 5px;
+  --gap: 20px;
+  --radius: 5px;
+  --blur: 10px;
+  --transition-velocity: 200ms;
+
+
+  --color-main-hue: 230deg;
+  --color-main-saturation: 13%;
+  --color-main-lightness: 9%;
+
+  --color-main: hsla(var(--color-main-hue), var(--color-main-saturation), var(--color-main-lightness), 1);
+  --color-brand: var(--color-main);
+
+  --color-success: hsla(120, 100%, 25%, 1);
+  --color-info: hsla(211.059, 100%, 50%, 1);
+  --color-warning: hsla(46.286, 100%, 48%, 1);
+  --color-error: hsla(357.303, 82%, 57%, 1);
+}
+/**************************** ROOT END ****************************/
 
 /**************************** Defaults START ****************************/
 /* Removing unnecessary spaces from all elements */
