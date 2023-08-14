@@ -1,0 +1,60 @@
+/**************************** ROOT START ****************************/
+/**************************** ROOT END
+
+/**************************** Defaults START ****************************/
+/* Removing unnecessary spaces from all elements */
+:root, html, body, *, *::before, *::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  /* user-select: none; /* Disable copy */
+  /* pointer-events: none; */
+
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* Mobile link click effect disabling */
+  /* -webkit-tap-highlight-color: transparent; */
+}
+
+/* Add disabled effect to file selector button when disabled */
+*{
+  &[disabled], [disabled]::file-selector-button, [type=submit]:disabled{
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+/* Better <hr> UI */
+hr{
+  border:none;
+  border-top:1px solid var(--color-text-secondary);
+}
+
+/* <a> basic active & hover effects */
+a{
+  cursor: pointer;
+  color: var(--color-text-secondary);
+
+  &:where(:active, :focus, :hover){
+    color: var(--color-text-primary);
+  }
+
+}
+
+/* Fix li elemet going out from parent element */
+li{
+  margin-left: 20px;
+}
+
+/*** Removing default scrollbars START ***/
+*{
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Chrome, Safari, Opera */
+*::-webkit-scrollbar{
+  display: none;
+}
+/*** Removing default scrollbars END ***/
+/**************************** Defaults END ****************************/
