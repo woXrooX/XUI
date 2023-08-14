@@ -92,7 +92,7 @@ body{
 }
 /*** Body END ***/
 
-/*** Mobile START ***/
+/*** Mobile Screen START ***/
 @media only screen and (max-width: 600px){
   :root{
     font-size: 16px;
@@ -103,5 +103,274 @@ body{
     overflow: hidden;
   }
 }
-/*** Mobile END ***/
+/*** Mobile Screen END ***/
 /**************************** Defaults END ****************************/
+
+/**************************** Info, Success, Warning, Error START ****************************/
+success{
+  color: var(--color-success);
+
+  &::before{
+    content:"\\2713";
+  }
+
+}
+
+info{
+  color: var(--color-info);
+
+  &::before{
+    content:"\\2139";
+  }
+
+}
+
+warning{
+  color: var(--color-warning);
+
+  &::before{
+    content:"\\26A0";
+  }
+
+}
+
+error{
+  color: var(--color-error);
+
+  &::before{
+    content: "\\2715";
+  }
+
+}
+
+info, success, warning, error{
+  &::before{
+    margin-right:5px;
+  }
+
+  &:empty{
+    display:none;
+  }
+
+}
+/**************************** Info, Success, Warning, Error END ****************************/
+
+/**************************** Forms START ****************************/
+/************ Form Variables START ************/
+:root{
+  --f-padding: 10px;
+  --f-radius: 5px;
+  --f-gap: 10px;
+  --f-height: 40px;
+  --f-width: 100%;
+  --f-font-size: 20px;
+  --f-border: 1px solid var(--color-text-secondary);
+  --f-transition: var(--transition-velocity) ease-in-out;
+  --f-transition-property: background-color, border;
+}
+/************ Form Variables END ************/
+form{
+  width: var(--f-width);
+
+  display: grid;
+  grid-gap: var(--f-gap);
+
+  & label{
+    width: 100%;
+
+    & > p{
+      font-size: 0.8rem;
+      min-height: 1rem;
+      display: inline-block;
+      padding: var(--padding);
+    }
+  }
+
+  & fieldset{
+    padding: var(--f-padding);
+    border-radius: var(--f-radius);
+    border: var(--f-border);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--f-gap);
+
+    & legend{
+      background-color: var(--color-text-primary);
+      color: var(--color-text-accent);
+      border-radius: var(--f-radius);
+      padding: 2px 5px;
+    }
+
+  }
+
+}
+
+/** select, textarea, imput -> type = [text, password, eMail, number, color, file, date, tel, range] START **/
+select,
+textarea,
+input:where([type=text], [type=eMail], [type=password], [type=number], [type=color], [type=file], [type=date], [type=tel], [type=range]){
+  background-color: var(--color-surface-3);
+  width: var(--f-width);
+  height: var(--f-height);
+  font-size: var(--f-font-size);
+  padding: 0 var(--f-padding);
+  border-radius: var(--f-radius);
+  border: var(--f-border);
+
+  transition: var(--f-transition);
+  transition-property: var(--f-transition-property);
+}
+/** select, textarea, imput -> type = [text, password, eMail, number, color, file, date, tel, range] END **/
+
+/** :hover & :focus -> inputs & textarea & select START **/
+select:not(:disabled):where(:hover, :focus),
+textarea:not(:disabled):where(:hover, :focus),
+input[type=number]:not(:disabled):where(:hover, :focus),
+input:not(:disabled):where(:hover, :focus){
+  background-color: var(--color-surface-5);
+  border: 1px solid var(--color-text-primary);
+
+}
+/** :hover & :focus -> inputs & textarea & select END **/
+
+/** Textarea START **/
+textarea{
+  height: unset;
+  font-size: calc(var(--f-font-size) / 1.5);
+  min-height: 150px;
+  resize: vertical;
+  padding: var(--f-padding);
+
+}
+/** Textarea END **/
+
+/** input[type=color] START **/
+
+/* Chrome X */
+input[type=color]::-webkit-color-swatch-wrapper{
+  padding: 5px;
+  width: var(--f-width);
+}
+
+/* Chrome Y */
+input[type=color]::-webkit-color-swatch{
+  border: none;
+  border-radius: var(--f-radius);
+  height: 100%;
+}
+
+/* Firefox X */
+input[type=color]::-moz-color-swatch-wrapper {
+  padding: 5px;
+  width: var(--f-width);
+}
+
+/* Firefox Y */
+input[type=color]::-moz-color-swatch{
+  border: none;
+  border-radius: var(--f-radius);
+  height: 100%;
+}
+/** input[type=color] END **/
+
+/** input[type=file] START **/
+/* Input */
+input[type=file]{
+  padding: var(--padding);
+  font-size: var(--f-font-size);
+}
+
+/* File Button */
+input[type=file]::file-selector-button{
+  background-color: var(--color-main);
+  color: white;
+  font-size: var(--f-font-size);
+
+  padding: 3px 10px;
+
+  border: none;
+  border-radius: var(--f-radius);
+
+  cursor: pointer;
+
+  filter: brightness(120%);
+  transition: var(--transition-velocity) filter;
+}
+
+/* File Button :hover */
+input[type=file]::file-selector-button:not(:disabled):hover{
+  filter: brightness(80%);
+}
+/** input[type=file] END **/
+
+/** input[type=number] Hide Arrow START **/
+/* Firefox */
+input[type=number]{-moz-appearance: textfield;}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{-webkit-appearance: none;}
+/** input[type=number] END **/
+
+/************ input[type=radio] & input[type=checkbox] START ************/
+input:where([type=radio], [type=checkbox]){
+  width: 20px;
+  height: auto;
+
+}
+/************ input[type=radio] & input[type=checkbox] END ************/
+
+/************ select hide arrow START ************/
+/* form :not(input:where([type=radio], [type=checkbox])), */
+select{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+}
+/************ select hide arrow END ************/
+
+/************ input[type=submit] & button START ************/
+button,
+input[type=submit]{
+  cursor: pointer;
+  user-select: none;
+
+  background-color: var(--color-main);
+  color: white;
+  text-transform: uppercase;
+
+  overflow: hidden;
+  width: auto;
+  height: var(--f-height);
+
+  padding: 0px var(--f-padding);
+  border-radius: var(--f-radius);
+  border: none;
+  box-shadow: 0px 5px 10px 0px rgba(0 0 0 / 0.3);
+
+  filter: brightness(120%);
+  transition: var(--transition-velocity) ease-in-out;
+  transition-property: filter transform box-shadow;
+}
+
+/* On Hover */
+button:not(:disabled):where(:hover),
+input[type=submit]:not(:disabled):where(:hover){
+  filter: brightness(80%);
+}
+
+/* On Active */
+button:not(:disabled):where(:active),
+input[type=submit]:not(:disabled):where(:active){
+  transform: translateY(5px);
+  box-shadow: 0px 5px 10px -5px rgba(0 0 0 / 0.3);
+}
+
+/* On Focus */
+button:not(:disabled):where(:focus),
+input[type=submit]:not(:disabled):where(:focus){
+}
+/************ input[type=submit] & button END ************/
+/**************************** Forms END ****************************/
