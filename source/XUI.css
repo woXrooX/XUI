@@ -317,7 +317,6 @@ input::-webkit-inner-spin-button{-webkit-appearance: none;}
 input:where([type=radio], [type=checkbox]){
   width: 20px;
   height: auto;
-
 }
 /************ input[type=radio] & input[type=checkbox] END ************/
 
@@ -327,7 +326,6 @@ select{
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-
 }
 /************ select hide arrow END ************/
 
@@ -374,3 +372,45 @@ input[type=submit]:not(:disabled):where(:focus){
 }
 /************ input[type=submit] & button END ************/
 /**************************** Forms END ****************************/
+
+/**************************** Custom scrollbar START ****************************/
+/************ Common START ************/
+.scrollbar-x,
+.scrollbar-y{
+  overflow: hidden;
+}
+.scrollbar-x{
+  overflow-x: scroll;
+
+}
+.scrollbar-y{
+  overflow-y: scroll;
+}
+/************ Common END ************/
+
+
+/************ Firefox START ************/
+:where(.scrollbar-x, .scrollbar-y){
+  scrollbar-width: auto;
+  scrollbar-color: var(--color-main) transparent;
+}
+/************ Firefox END ************/
+
+/************ All Other Browsers START ************/
+:where(.scrollbar-x, .scrollbar-y)::-webkit-scrollbar{
+  display: unset;
+  width: 5px;
+  height: 5px;
+}
+:where(.scrollbar-x, .scrollbar-y)::-webkit-scrollbar-track{
+  background-color: transparent;
+}
+:where(.scrollbar-x, .scrollbar-y)::-webkit-scrollbar-thumb{
+  background-color: var(--color-main-hue), var(--color-main-saturation), var(--color-main-lightness), 0.5);
+  border-radius: 5px;
+}
+:where(.scrollbar-x, .scrollbar-y)::-webkit-scrollbar-thumb:hover{
+  background-color: hsla(var(--color-main-hue), var(--color-main-saturation), $var(var(--color-main-lightness)), 1);
+}
+/************ All Other Browsers END ************/
+/**************************** Custom scrollbar END ****************************/
