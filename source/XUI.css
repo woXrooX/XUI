@@ -134,7 +134,7 @@ success{
   color: var(--color-success);
 
   &::before{
-    content:"\\2713";
+    content:"\2713";
   }
 
 }
@@ -143,7 +143,7 @@ info{
   color: var(--color-info);
 
   &::before{
-    content:"\\2139";
+    content:"\2139";
   }
 
 }
@@ -152,7 +152,7 @@ warning{
   color: var(--color-warning);
 
   &::before{
-    content:"\\26A0";
+    content:"\26A0";
   }
 
 }
@@ -161,7 +161,7 @@ error{
   color: var(--color-error);
 
   &::before{
-    content: "\\2715";
+    content: "\2715";
   }
 
 }
