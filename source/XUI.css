@@ -444,7 +444,7 @@ input[type=submit]:not(:disabled):where(:focus){
 
 /**************************** Boxes START ****************************/
 /* Clean */
-.box-clean{
+.surface-clean{
   background-color: var(--color-surface-3);
 
   border-radius: var(--radius);
@@ -452,7 +452,7 @@ input[type=submit]:not(:disabled):where(:focus){
 }
 
 /* 2D */
-.box-2D{
+.surface-2D{
   background-color: var(--color-surface-3);
 
   border-radius: 0px;
