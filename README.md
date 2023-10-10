@@ -1,2 +1,4 @@
 # XUI
-CSS library
+#### CSS library
+
+More info here: https://www.woXrooX.com/XUI
