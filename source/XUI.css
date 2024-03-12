@@ -1153,16 +1153,14 @@
 	}
 
 	@layer surfaces{
-		/* Clean */
-		.surface-clean{
+		.surface-v1{
 			background-color: var(--color-main-tint-3);
 
 			border-radius: var(--radius);
 			box-shadow: var(--shadow);
 		}
 
-		/* 2D */
-		.surface-2D{
+		.surface-v2{
 			background-color: var(--color-main-tint-3);
 
 			border-radius: 0px;
