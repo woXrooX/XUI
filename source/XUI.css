@@ -436,7 +436,6 @@
 
 		@supports (-moz-appearance:none){
 			:where(.scrollbar-x, .scrollbar-y){
-				scrollbar-width: auto;
 				scrollbar-color: var(--color-main) transparent;
 			}
 		}
