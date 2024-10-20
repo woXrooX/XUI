@@ -571,6 +571,7 @@
 			&[type=file]{
 				padding: var(--padding);
 				font-size: var(--f-font-size);
+				cursor: pointer;
 
 				/* Button */
 				&::file-selector-button{
@@ -584,6 +585,20 @@
 					border-radius: var(--f-radius);
 
 					cursor: pointer;
+				}
+
+				&.file-v1{
+					border: 1px dashed var(--color-text-secondary);
+
+					&::file-selector-button{
+						color: transparent;
+
+						background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2224px%22%20viewBox%3D%220%20-960%20960%20960%22%20width%3D%2224px%22%20fill%3D%22%23ffffff%22%3E%3Cpath%20d%3D%22M440-367v127q0%2017%2011.5%2028.5T480-200q17%200%2028.5-11.5T520-240v-127l36%2036q6%206%2013.5%209t15%202.5q7.5-.5%2014.5-3.5t13-9q11-12%2011.5-28T612-388L508-492q-6-6-13-8.5t-15-2.5q-8%200-15%202.5t-13%208.5L348-388q-12%2012-11.5%2028t12.5%2028q12%2011%2028%2011.5t28-11.5l35-35ZM240-80q-33%200-56.5-23.5T160-160v-640q0-33%2023.5-56.5T240-880h287q16%200%2030.5%206t25.5%2017l194%20194q11%2011%2017%2025.5t6%2030.5v447q0%2033-23.5%2056.5T720-80H240Zm280-560q0%2017%2011.5%2028.5T560-600h160L520-800v160Z%22%2F%3E%3C%2Fsvg%3E");
+						background-repeat: no-repeat;
+						background-position: center;
+
+						cursor: pointer;
+					}
 				}
 			}
 
@@ -1580,6 +1595,8 @@
 			.max-w-100px{max-width: 100px;}
 			.max-w-200px{max-width: 200px;}
 			.max-w-250px{max-width: 250px;}
+			.max-w-300px{max-width: 300px;}
+			.max-w-400px{max-width: 400px;}
 			.max-w-500px{max-width: 500px;}
 			.max-w-600px{max-width: 600px;}
 			.max-w-700px{max-width: 700px;}
@@ -1587,7 +1604,13 @@
 			.max-w-900px{max-width: 900px;}
 			.max-w-1000px{max-width: 1000px;}
 			.max-w-1200px{max-width: 1200px;}
+			.max-w-1300px{max-width: 1300px;}
+			.max-w-1400px{max-width: 1400px;}
 			.max-w-1500px{max-width: 1500px;}
+			.max-w-1600px{max-width: 1600px;}
+			.max-w-1700px{max-width: 1700px;}
+			.max-w-1800px{max-width: 1800px;}
+			.max-w-1900px{max-width: 1900px;}
 			.max-w-2000px{max-width: 2000px;}
 			.max-w-2200px{max-width: 2200px;}
 			.max-w-2500px{max-width: 2500px;}
@@ -2526,7 +2549,7 @@
 
 		.bs-default{box-shadow: var(--shadow);}
 
-		.bs-2D{
+		.bs-v1{
 			box-shadow: -2px 2px 0px 0px hsla(var(--color-main-hue), var(--color-main-saturation), 0%, 0.7);
 
 			transition: var(--transition-velocity) ease-in-out box-shadow;
@@ -2536,7 +2559,7 @@
 			}
 		}
 
-		.bs-2D-multi-layer{
+		.bs-v2{
 			box-shadow:
 				5px 5px 0px 0px hsla(var(--color-main-hue), var(--color-main-saturation), 0%, 0.4),
 				10px 10px 0px 0px hsla(var(--color-main-hue), var(--color-main-saturation), 0%, 0.3),
@@ -2624,68 +2647,68 @@
 
 	@layer animations{
 		@supports (animation-timeline: view()){
-			@layer onView{
-				.onView{
+			@layer on_view{
+				.on_view{
 					animation-timeline: view();
 					animation-fill-mode: forwards;
 					animation-timing-function: linear;
 
 					animation-name:
-						var(--fadeIn-name, normal),
-						var(--fadeOut-name, normal),
-						var(--scaleUpOut-name, normal),
-						var(--scaleDownIn-name, normal)
+						var(--fade_in_name, normal),
+						var(--fade_out_name, normal),
+						var(--scale_up_out_name, normal),
+						var(--scale_down_in_name, normal)
 					;
 
 					animation-range-start:
-						var(--fadeIn-range-start, normal),
-						var(--fadeOut-range-start, normal),
-						var(--scaleUpOut-range-start, normal),
-						var(--scaleDownIn-range-start, normal)
+						var(--fade_in_range_start, normal),
+						var(--fade_out_range_start, normal),
+						var(--scale_up_out_range_start, normal),
+						var(--scale_down_in_range_start, normal)
 					;
 
 					animation-range-end:
-						var(--fadeIn-range-end, normal),
-						var(--fadeOut-range-end, normal),
-						var(--scaleUpOut-range-end, normal),
-						var(--scaleDownIn-range-end, normal)
+						var(--fade_in_range_end, normal),
+						var(--fade_out_range_end, normal),
+						var(--scale_up_out_range_end, normal),
+						var(--scale_down_in_range_end, normal)
 					;
 
-					&.fadeIn{
-						--fadeIn-name: fadeIn;
-						--fadeIn-range-start: 30%;
-						--fadeIn-range-end: 50%;
+					&.fade_in{
+						--fade_in_name: fade_in;
+						--fade_in_range_start: 30%;
+						--fade_in_range_end: 50%;
 
 						opacity: 0;
 					}
 
-					&.fadeOut{
-						--fadeOut-name: fadeOut;
-						--fadeOut-range-start: 50%;
-						--fadeOut-range-end: 70%;
+					&.fade_out{
+						--fade_out_name: fade_out;
+						--fade_out_range_start: 50%;
+						--fade_out_range_end: 70%;
 					}
 
-					&.scaleUpOut{
-						--scaleUpOut-name: scaleUpOut;
-						--scaleUpOut-range-start: 60%;
-						--scaleUpOut-range-end: 80%;
+					&.scale_up_out{
+						--scale_up_out_name: scale_up_out;
+						--scale_up_out_range_start: 60%;
+						--scale_up_out_range_end: 80%;
 					}
 
-					&.scaleDownIn{
-						--scaleDownIn-name: scaleDownIn;
-						--scaleDownIn-range-start: 20%;
-						--scaleDownIn-range-end: 40%;
+					&.scale_down_in{
+						--scale_down_in_name: scale_down_in;
+						--scale_down_in_range_start: 20%;
+						--scale_down_in_range_end: 40%;
 					}
 				}
 
-				@keyframes fadeIn{to {opacity: 1;}}
-				@keyframes fadeOut{to {opacity: 0;}}
+				@keyframes fade_in{to {opacity: 1;}}
+				@keyframes fade_out{to {opacity: 0;}}
 
-				@keyframes scaleUpOut{
+				@keyframes scale_up_out{
 					from {scale: 1;}
 					to {scale: 1.5;}
 				}
-				@keyframes scaleDownIn{
+				@keyframes scale_down_in{
 					from {scale: 1.5;}
 					to {scale: 1;}
 				}
