@@ -177,18 +177,6 @@
 		  margin-left: 20px;
 		}
 
-		/*** Removing default scrollbars START ***/
-		*{
-		  -ms-overflow-style: none; /* IE and Edge */
-		  scrollbar-width: none; /* Firefox */
-		}
-
-		/* Chrome, Safari, Opera */
-		*::-webkit-scrollbar{
-		  display: none;
-		}
-		/*** Removing default scrollbars END ***/
-
 		/*** Body START ***/
 		body{
 			background-color: var(--color-main-tint-1);
@@ -435,24 +423,28 @@
 	}
 
 	@layer custom_scrollbars{
+		/*** Removing default scrollbars START ***/
+		*{
+			/* IE and Edge */
+			/* -ms-overflow-style: none; */
+			/* Firefox */
+			/* scrollbar-width: none; */
+		}
+
+		/* Chrome, Safari, Opera */
+		*::-webkit-scrollbar{ display: none; }
+		/*** Removing default scrollbars END ***/
+
 		/** Common START **/
 		.scrollbar-x,
-		.scrollbar-y{
-			overflow: hidden;
-		}
-		.scrollbar-x{
-			overflow-x: scroll;
-		}
-		.scrollbar-y{
-			overflow-y: scroll;
-		}
+		.scrollbar-y{ overflow: hidden; }
+		.scrollbar-x{ overflow-x: scroll; }
+		.scrollbar-y{ overflow-y: scroll; }
 		/** Common END **/
 
 		/********************* v1 START *********************/
 		/** Firefox START **/
-		:where(.scrollbar-x, .scrollbar-y){
-			scrollbar-width: auto;
-		}
+		:where(.scrollbar-x, .scrollbar-y){ scrollbar-width: auto; }
 
 		@supports (-moz-appearance:none){
 			:where(.scrollbar-x, .scrollbar-y){
@@ -960,12 +952,16 @@
 			}
 
 			/* Default padding for all cells */
-			& th, td{
-				padding: var(--tbl-padding);
-			}
+			& th, td{ padding: var(--tbl-padding); }
 
-			&.table-layout-fixed{
-				table-layout: fixed !important;
+			&.table-layout-fixed{ table-layout: fixed !important; }
+
+			&.table-thead-sticky{
+				& > thead{
+					position: sticky;
+					top: 0;
+					left: 0;
+				}
 			}
 
 			/* Table versions */
