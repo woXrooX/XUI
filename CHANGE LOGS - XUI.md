@@ -36,9 +36,9 @@
 .s-w-* -> .s-width-*
 
 # Height
-.height-* -> .height-*
+.h-* -> .height-*
 .vh-N -> .height-Nvh
-.height-Npx -> .height-Npx
+.h-Npx -> .height-Npx
 
 .min-h-* -> .min-height-*
 .min-vh-N -> .min-height-Nvh
@@ -58,4 +58,3 @@
 .s-max-h -> s-max-height-*
 .s-max-vh-N -> .s-max-height-Nvh
 .s-max-h-Npx -> .s-max-height-Npx
-
