@@ -393,6 +393,7 @@
 			.text-white-space-nowrap{white-space: nowrap;}
 			.text-white-space-nowrap-important{white-space: nowrap !important;}
 			.text-white-space-pre{white-space: pre;}
+			.text-white-space-pre-wrap { white-space: pre-wrap; }
 		}
 
 		/****** Other ******/
@@ -935,9 +936,8 @@
 			}
 		}
 
-		.field-sizing-content{
-			field-sizing: content;
-		}
+		.field-sizing-content { field-sizing: content; }
+		.resize-none { resize: none; }
 	}
 
 	@layer table{
@@ -1303,6 +1303,14 @@
 		}
 	}
 
+	@layer lists{
+		/* Handle any level of nesting */
+		ul, ol {
+			& ul,
+			& ol { padding-left: 1em; }
+		}
+	}
+
 	@layer surfaces{
 		.surface-v1{
 			background-color: var(--color-main-tint-2);
@@ -1395,6 +1403,21 @@
 		.bg-gradient-left{background-image: linear-gradient(to left, var(--color-main-tint-2), var(--color-main-tint-6));}
 		.bg-gradient-right{background-image: linear-gradient(to right, var(--color-main-tint-2), var(--color-main-tint-6));}
 		.bg-gradient-45{background-image: linear-gradient(45deg, var(--color-main-tint-2), var(--color-main-tint-6) 80%);}
+
+		@layer Hover{
+			.on-hover-bg-brand { &:hover { background-color: var(--color-main); } }
+
+			.on-hover-bg-1 { &:hover { background-color: var(--color-main-tint-1); } }
+			.on-hover-bg-2 { &:hover { background-color: var(--color-main-tint-2); } }
+			.on-hover-bg-3 { &:hover { background-color: var(--color-main-tint-3); } }
+			.on-hover-bg-4 { &:hover { background-color: var(--color-main-tint-4); } }
+			.on-hover-bg-5 { &:hover { background-color: var(--color-main-tint-5); } }
+			.on-hover-bg-6 { &:hover { background-color: var(--color-main-tint-6); } }
+			.on-hover-bg-7 { &:hover { background-color: var(--color-main-tint-7); } }
+			.on-hover-bg-8 { &:hover { background-color: var(--color-main-tint-8); } }
+			.on-hover-bg-9 { &:hover { background-color: var(--color-main-tint-9); } }
+			.on-hover-bg-10 { &:hover { background-color: var(--color-main-tint-10); } }
+		}
 	}
 
 	@layer image{
@@ -1500,6 +1523,7 @@
 			.width-10px{width: 10px;}
 			.width-20px{width: 20px;}
 			.width-30px{width: 30px;}
+			.width-35px{width: 35px;}
 			.width-40px{width: 40px;}
 			.width-45px{width: 45px;}
 			.width-50px{width: 50px;}
@@ -1769,6 +1793,7 @@
 			.height-10px{height: 10px;}
 			.height-20px{height: 20px;}
 			.height-30px{height: 30px;}
+			.height-35px{height: 35px;}
 			.height-40px{height: 40px;}
 			.height-45px{height: 45px;}
 			.height-50px{height: 50px;}
@@ -2191,7 +2216,9 @@
 			.flex-basis-500px{flex-basis: 500px;}
 			.flex-basis-550px{flex-basis: 550px;}
 
-			/* Needs to be done here: align-self */
+			.align-self-flex-start { align-self: flex-start; }
+			.align-self-flex-center { align-self: flex-center; }
+			.align-self-flex-end { align-self: flex-end; }
 
 			.flex-nowrap{flex-wrap: nowrap;}
 			.flex-wrap{flex-wrap: wrap;}
