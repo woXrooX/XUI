@@ -1,3 +1,5 @@
+This repository is no longer maintained. Development has been moved to woXrooX/x as a subproject.
+
 # XUI
 
 > **XUI** is a CSS library that embodies a seamless blend of cleanliness, elegance, adaptability and lightweight design.
